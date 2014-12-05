@@ -15,7 +15,7 @@ wantedFeatures <- features[grep("-(mean|std)\\(\\)", features$feature),]
 # reset the data
 data <- data.frame()
 
-for (t in c("test")) { # , "train")) {
+for (t in c("test", "train")) {
     # Read the data
     data_features <- read.table(paste(dir, t, "/X_", t, ".txt", sep=""), header = FALSE, sep = "", col.names = features$feature)
     # Only pull out the wanted features
@@ -39,4 +39,7 @@ for (t in c("test")) { # , "train")) {
 }
 
 # Now product the reshaped data
-library(reshape2)
+meanData <- aggregate(subset(data, select=-c(subject, activity)), list(data$subject, data$activity), mean)
+names(meanData)[1:2] = c("subject", "activity")
+
+write.table(meanData, "meanData.csv", row.names=FALSE, sep=",")
