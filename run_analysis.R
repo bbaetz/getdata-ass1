@@ -15,15 +15,18 @@ activities <- read.table(paste(dir, "activity_labels.txt", sep=""), col.names = 
 
 features <- read.table(paste(dir, "features.txt", sep=""), col.names = c("featureId", "feature"), sep=" ")
 wantedFeatures <- features[grep("-(mean|std)\\(\\)", features$feature),]
+# Tidy names
+wantedFeatures$feature <- gsub("\\(|\\)", "", wantedFeatures$feature)
 
 # reset the data
 data <- data.frame()
-
 for (t in c("test", "train")) {
     # Read the data
-    data_features <- read.table(paste(dir, t, "/X_", t, ".txt", sep=""), header = FALSE, sep = "", col.names = features$feature)
+    data_features <- read.table(paste(dir, t, "/X_", t, ".txt", sep=""), header = FALSE, sep = "")
     # Only pull out the wanted features
     data_features <- data_features[,wantedFeatures$featureId]
+    # and fix names
+    names(data_features) <- wantedFeatures$feature
     
     # Read the subjects
     data_subjects <- read.table(paste(dir, t, "/subject_",  t, ".txt", sep=""), col.names = c("subject"), header = FALSE)
