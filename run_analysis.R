@@ -46,4 +46,4 @@ for (t in c("test", "train")) {
 meanData <- aggregate(subset(data, select=-c(subject, activity)), list(data$subject, data$activity), mean)
 names(meanData)[1:2] = c("subject", "activity")
 
-write.table(meanData, "meanData.csv", row.names=FALSE, sep=",")
+write.table(meanData, "meanData.txt", row.names=FALSE, sep=",")
