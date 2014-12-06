@@ -33,25 +33,27 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 ### Transformed data
 
-Each feature is available in the following variables. `-XYZ` is used to denote 3-axial signals in the X, Y and Z directions, and `AGGR` represents the aggreagation being used (`std` for standard deviation, and `mean` for the mean)
+Each feature is available in the following variables, based on the original fields (lowercased).
 
-* `tBodyAcc-AGGR-XYZ`
-* `tGravityAcc-AGGR-XYZ`
-* `tBodyAccJerk-AGGR-XYZ`
-* `tBodyGyro-AGGR-XYZ`
-* `tBodyGyroJerk-AGGR-XYZ`
-* `tBodyAccMag-AGGR`
-* `tGravityAccMag-AGGR`
-* `tBodyAccJerkMag-AGGR`
-* `tBodyGyroMag-AGGR`
-* `tBodyGyroJerkMag-AGGR`
-* `fBodyAcc-AGGR-XYZ`
-* `fBodyAccJerk-AGGR-XYZ`
-* `fBodyGyro-AGGR-XYZ`
-* `fBodyAccMag-AGGR`
-* `fBodyAccJerkMag-AGGR`
-* `fBodyGyroMag-AGGR`
-* `fBodyGyroJerkMag-AGGR`
+`-XYZ` is used to denote 3-axial signals in the X, Y and Z directions, and `AGGR` represents the aggreagation being used (`std` for standard deviation, and `mean` for the mean)
+
+* `tbodyacc-AGGR-XYZ`
+* `tgravityacc-AGGR-XYZ`
+* `tbodyaccjerk-AGGR-XYZ`
+* `tbodygyro-AGGR-XYZ`
+* `tbodygyrojerk-AGGR-XYZ`
+* `tbodyaccmag-AGGR`
+* `tgravityaccmag-AGGR`
+* `tbodyaccjerkmag-AGGR`
+* `tbodygyromag-AGGR`
+* `tbodygyrojerkmag-AGGR`
+* `fbodyacc-AGGR-XYZ`
+* `fbodyaccjerk-AGGR-XYZ`
+* `fbodygyro-AGGR-XYZ`
+* `fbodyaccmag-AGGR`
+* `fbodyaccjerkmag-AGGR`
+* `fbodygyromag-AGGR`
+* `fbodygyrojerkmag-AGGR`
 
 In addition, there are two additional columns:
 

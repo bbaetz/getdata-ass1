@@ -16,7 +16,7 @@ activities <- read.table(paste(dir, "activity_labels.txt", sep=""), col.names = 
 features <- read.table(paste(dir, "features.txt", sep=""), col.names = c("featureId", "feature"), sep=" ")
 wantedFeatures <- features[grep("-(mean|std)\\(\\)", features$feature),]
 # Tidy names
-wantedFeatures$feature <- gsub("\\(|\\)", "", wantedFeatures$feature)
+wantedFeatures$feature <- tolower(gsub("\\(|\\)", "", wantedFeatures$feature))
 
 # reset the data
 data <- data.frame()
