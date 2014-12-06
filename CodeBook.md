@@ -66,6 +66,10 @@ In addition, there are two additional columns:
   * `STANDING`
   * `LAYING`
 
+### Summarised data
+
+The `meanData.txt` file includes the above fields, but grouped by subject and activity, and averaged.
+
 ## License
 Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
 
