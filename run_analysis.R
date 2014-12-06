@@ -1,7 +1,11 @@
-#fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-#download.file(fileUrl, destfile = "Dataset.zip", method = "curl")
-
-#unzip("Dataset.zip")
+# Get the data
+zipfile <- "Dataset.zip"
+if (!file.exists(zipfile)) {
+    fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    download.file(fileUrl, destfile = zipfile, method = "curl")
+    
+    unzip(zipfile)
+}
 
 library(data.table)
 
